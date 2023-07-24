@@ -1,0 +1,133 @@
+nav {
+    padding-inline: 10vw;
+    padding-block: 5vh;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+.nav-items {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+}
+
+.nav-items a {
+    text-transform: uppercase;
+}
+
+.nav-socials, .nav-item-divider, .menu-btn, .nav-items-bg {
+    display: none;
+}
+
+.login-btn {
+    background-color: hsl(0, 94%, 66%);
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px hsla(231, 69%, 60%, 0.2);
+    border: 2px solid hsl(0, 94%, 66%);
+}
+
+.login-btn:hover {
+    cursor: pointer;
+    background-color: transparent;
+    color: hsl(0, 94%, 66%);
+}
+
+@media screen and (max-width: 60rem) {
+    nav {
+        padding-inline: 5vw;
+    }
+
+    .logo {
+        z-index: 1;
+    }
+
+    .logo.opened g *  {
+        fill: white;
+    }
+
+    .logo.opened > g > g > path {
+        fill: hsla(229, 31%, 21%, 0.8);
+    }
+
+    .menu-btn {
+        display: block;
+        color: white;
+        z-index: 2;
+    }
+    .nav-items {
+        flex-direction: column; 
+        gap: 3vh;
+        position: fixed;  
+        width: 90vw;
+        /* height: calc(100vh - 20vh); */
+        top: 12vh ;
+        left: 5vw;
+        color: white;
+        transform: translateX(100vw);
+        transition: 0.2s ease-in;
+    }
+
+    .nav-items.opened {
+        transform: none;
+    }
+
+    .nav-items a {
+        letter-spacing: 0.2em;
+    }
+
+    .nav-items-bg.opened {
+        z-index: 1;
+        transition: 0.2s ease-in;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: hsla(229, 31%, 21%, 0.8);
+    }
+
+    .login-btn {
+        width: 100%;
+        background-color: transparent;
+        border: 2px solid white;
+        letter-spacing: 0.2em;
+        box-shadow: none;
+    }
+
+    .nav-items.opened > .nav-item-divider {
+        display: block;
+    }
+
+    .nav-item-divider {
+        height: 1px;
+        background-color: hsl(229, 8%, 60%);
+        width: 100%;
+    }
+
+    .nav-socials.opened {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        margin-top: auto;
+        display: flex;
+        gap: 5vw;
+        bottom: 10vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .nav-social-icon {
+        color: white;
+    }
+
+}

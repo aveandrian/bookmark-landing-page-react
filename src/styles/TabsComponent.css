@@ -1,0 +1,140 @@
+.tab-name-wrapper {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 5vh;
+}
+
+.tab-name {
+    height: 100%;
+    font-size: 18px;
+}
+
+.tab-name:hover {
+    cursor: pointer;
+    color: hsl(0, 94%, 66%)
+}
+
+.divider {
+    height: 1px;
+    width: 70%;
+    background-color: grey;
+    position: relative;
+}
+
+.selected-divider {
+    width: calc(100%/3);
+    height: 5px;
+    background-color: hsl(0, 94%, 66%);
+    position: absolute;
+    top: -5px;
+    left: 0;
+    transition: 0.2s ease-in-out;
+}
+
+.tab-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 5vw;
+    padding-top: 5vh;
+}
+
+.tab-content-description {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    align-items: start;
+}
+
+.tab-content-title {
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+
+.tab-content-text {
+    font-size: 18px;
+    line-height: 1.5em;
+    width: 83%;
+}
+
+.tab-content-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px hsla(231, 69%, 60%, 0.2);
+    background-color: hsl(231, 69%, 60%);
+    border: 2px solid hsl(231, 69%, 60%);
+    color: white;
+}
+
+.tab-img {
+    height: 40vh;
+    width: 40vw;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 60rem) {
+    .divider {
+        display: none;
+    }
+    .tab-name-wrapper {
+        width: 100%;
+        margin-bottom: 12vh;
+        grid-template-columns: 1fr;
+    }
+
+    .tab-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 7vh;
+        position: relative;
+    }
+
+    .tab-name.active::after {
+        content: "";
+        position: absolute;
+        height: 5px;
+        width: 45%;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        /* left: 50%; */
+        background-color: hsl(0, 94%, 66%);
+    }
+
+    .tab-name:nth-child(odd) {
+        border-top: 1px solid grey;
+        border-bottom: 1px solid grey;
+    }
+
+
+    .tab-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10vh;
+    }
+
+    .tab-content-description {
+        text-align: center;
+        align-items: center;
+    }
+
+    .tab-content-title {
+        font-size: 1.5rem;
+    }
+
+    .tab-content-text {
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .tab-img {
+        width: 100%;
+        height: auto;
+    }
+}

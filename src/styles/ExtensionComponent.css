@@ -1,0 +1,43 @@
+.extension-cards-wrapper {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 3vw;
+    width: 100%;
+  
+}
+
+.extension-card {
+    padding: 30px;
+    background: url('/images/bg-dots.svg');
+    background-repeat: no-repeat;
+    background-position:  0 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+    width: fit-content;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px 5px hsla(231, 69%, 60%, 0.1);
+}
+
+.browser-logo {
+    margin-bottom: 2vh;
+}
+
+.install-btn {
+    width: 15vw;
+    padding-block: 15px;
+    margin-top: 10vh;
+    background-color: hsl(231, 69%, 60%);
+    border: 2px solid hsl(231, 69%, 60%);
+    color: white;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.install-btn:hover {
+    cursor: pointer;
+    background-color: white;
+    color: hsl(231, 69%, 60%);
+}
