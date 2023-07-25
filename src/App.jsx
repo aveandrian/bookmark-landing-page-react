@@ -2,8 +2,27 @@ import './App.css'
 import Navbar from './components/Navbar'
 import TabsComponent from './components/TabsComponent'
 import ExtensionComponent from './components/ExtensionComponent'
+import FAQ from './components/FAQ'
+import {ReactComponent as FooterLogo} from './assets/logo-bookmark.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebookSquare, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons'
+import { useState } from 'react'
 
 function App() {
+  const [error, setError] = useState(null)
+  const [email, setEmail] = useState('')
+
+  function handleChange(e){
+    setError(null)
+    setEmail(e.target.value)
+  }
+
+  function handleSubmit(e){
+    e.preventDefault()
+    if(email == '' || !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)))
+      return setError("Whoops, make sure it's an email")
+  }
 
   return (
     <> 
@@ -33,66 +52,50 @@ function App() {
       <TabsComponent />
     </section>
     <section className='extension-section'>
-    <h1 className='extension-section-title'>Download the extension</h1>
+      <h1 className='extension-section-title'>Download the extension</h1>
       <p className='extension-section-text'>
         We've got more browsers in the pipeline. Please do let us know if you've 
         got a favourite you'd like us to prioritize.
       </p>
       <ExtensionComponent />
     </section>
-  
-    Frequently Asked Questions
-    
-    Here are some of our FAQs. If you have any other questions you’d like 
-    answered please feel free to email us.
-  
-    {/* <!-- Question 1 --> */}
-    What is Bookmark?
-  
-    {/* <!-- Answer 1 --> */}
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt 
-    justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
-  
-    {/* <!-- Question 2 --> */}
-    How can I request a new browser?
-  
-    {/* <!-- Answer 2 --> */}
-    Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. 
-    Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, 
-    ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. 
-    Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.
-  
-    {/* <!-- Question 3 --> */}
-    Is there a mobile app?
-  
-    {/* <!-- Answer 3 --> */}
-    Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum 
-    urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed 
-    sollicitudin ex et ultricies bibendum.
-  
-    {/* <!-- Question 4 --> */}
-    What about other Chromium browsers?
-  
-    {/* <!-- Answer 4 --> */}
-    Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam 
-    vitae neque eget nisl gravida pellentesque non ut velit.
-  
-    More Info
-  
-    35,000+ already joined
-  
-    Stay up-to-date with what we’re doing
-  
-    Contact Us
-  
-    Features
-    Pricing
-    Contact
-    
+    <section className='faq-section'>
+      <h1 className='faq-section-title'>Frequently Asked Questions</h1>
+      <p className='faq-section-text'>
+        Here are some of our FAQs. If you have any other questions you’d like 
+        answered please feel free to email us.
+      </p>
+      <FAQ />
+      <button className="faq-btn">More info</button>
+    </section>
+    <section className='signup-section'>
+      <p className='signup-stat'>35,000+ already joined</p>
+      <h1 className='signup-title'>Stay up-to-date with what we’re doing</h1>
+      <form className='signup-form' onSubmit={handleSubmit}>
+        <div className='input-wrapper'>
+
+          <input className={`email-input ${error ? "input-error" : ""}`} placeholder='Enter your email address' value={email} onChange={handleChange}/>
+          {error && <FontAwesomeIcon icon={faCircleExclamation} className='error-icon' size='2xl'/>}
+          {error && <p className='error'>{error}</p>}
+        </div>
+        <button type='submit' className={`submit-btn ${error ? "btn-error" : ""}`}>Contact Us</button>
+      </form>
+
+    </section>
     <footer>
+      <div className='footer-content'>
+        <FooterLogo className='footer-logo' />
+        <a>Features</a>
+        <a>Pricing</a>
+        <a>Contact</a>
+        <div className='socials'>
+          <FontAwesomeIcon icon={faFacebookSquare} size="xl" className="social-icon" />
+          <FontAwesomeIcon icon={faTwitter} size="xl" className="social-icon" />
+        </div>
+      </div>
       <p className="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-        Coded by <a href="#">Your Name Here</a>.
+        Coded by <a href="https://github.com/aveandrian">aveandrian</a>.
       </p>
     </footer>
     </>

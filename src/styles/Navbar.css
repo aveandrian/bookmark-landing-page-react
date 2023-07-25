@@ -20,6 +20,12 @@ nav {
     text-transform: uppercase;
 }
 
+.nav-items a:hover {
+    cursor: pointer;
+    color: hsl(0, 94%, 66%);
+}
+
+
 .nav-socials, .nav-item-divider, .menu-btn, .nav-items-bg {
     display: none;
 }
@@ -29,10 +35,10 @@ nav {
     color: white;
     border: none;
     text-transform: uppercase;
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 5px 5px hsla(231, 69%, 60%, 0.2);
-    border: 2px solid hsl(0, 94%, 66%);
+    padding: 0.625 1.25rem ;
+    border-radius: 0.313rem ;
+    box-shadow: 0 0.313rem 0.313rem  hsla(231, 69%, 60%, 0.2);
+    border: 0.125rem solid hsl(0, 94%, 66%);
 }
 
 .login-btn:hover {
@@ -99,7 +105,7 @@ nav {
     .login-btn {
         width: 100%;
         background-color: transparent;
-        border: 2px solid white;
+        border: 0.125rem solid white;
         letter-spacing: 0.2em;
         box-shadow: none;
     }
@@ -109,7 +115,7 @@ nav {
     }
 
     .nav-item-divider {
-        height: 1px;
+        height: 0.063rem ;
         background-color: hsl(229, 8%, 60%);
         width: 100%;
     }

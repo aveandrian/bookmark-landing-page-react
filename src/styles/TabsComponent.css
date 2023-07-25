@@ -10,7 +10,7 @@
 
 .tab-name {
     height: 100%;
-    font-size: 18px;
+    font-size: 1.125rem ;
 }
 
 .tab-name:hover {
@@ -19,7 +19,7 @@
 }
 
 .divider {
-    height: 1px;
+    height: 0.063rem ;
     width: 70%;
     background-color: grey;
     position: relative;
@@ -27,10 +27,10 @@
 
 .selected-divider {
     width: calc(100%/3);
-    height: 5px;
+    height: 0.313rem ;
     background-color: hsl(0, 94%, 66%);
     position: absolute;
-    top: -5px;
+    top: -0.313rem ;
     left: 0;
     transition: 0.2s ease-in-out;
 }
@@ -56,17 +56,17 @@
 }
 
 .tab-content-text {
-    font-size: 18px;
+    font-size: 1.125rem ;
     line-height: 1.5em;
     width: 83%;
 }
 
 .tab-content-btn {
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 5px 5px hsla(231, 69%, 60%, 0.2);
+    padding: 0.625rem 1.25rem ;
+    border-radius: 0.313rem ;
+    box-shadow: 0 0.313rem 0.313rem  hsla(231, 69%, 60%, 0.2);
     background-color: hsl(231, 69%, 60%);
-    border: 2px solid hsl(231, 69%, 60%);
+    border: 0.125rem solid hsl(231, 69%, 60%);
     color: white;
 }
 
@@ -97,7 +97,7 @@
     .tab-name.active::after {
         content: "";
         position: absolute;
-        height: 5px;
+        height: 0.313rem ;
         width: 45%;
         bottom: 0;
         left: 50%;
@@ -107,8 +107,8 @@
     }
 
     .tab-name:nth-child(odd) {
-        border-top: 1px solid grey;
-        border-bottom: 1px solid grey;
+        border-top: 0.063rem solid grey;
+        border-bottom: 0.063rem solid grey;
     }
 
 

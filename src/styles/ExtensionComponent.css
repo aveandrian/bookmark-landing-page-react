@@ -8,7 +8,7 @@
 }
 
 .extension-card {
-    padding: 30px;
+    padding: 1.875rem ;
     background: url('/images/bg-dots.svg');
     background-repeat: no-repeat;
     background-position:  0 70%;
@@ -17,8 +17,9 @@
     align-items: center;
     gap: 1vh;
     width: fit-content;
-    border-radius: 20px;
-    box-shadow: 0 5px 5px 5px hsla(231, 69%, 60%, 0.1);
+    border-radius: 1.25rem ;
+    box-shadow: 0 0.313rem 0.313rem  0.313rem hsla(231, 69%, 60%, 0.1);
+    margin-top: calc(var(--n) * 5vh);
 }
 
 .browser-logo {
@@ -27,12 +28,12 @@
 
 .install-btn {
     width: 15vw;
-    padding-block: 15px;
+    padding-block: 0.938rem ;
     margin-top: 10vh;
     background-color: hsl(231, 69%, 60%);
-    border: 2px solid hsl(231, 69%, 60%);
+    border: 0.125rem solid hsl(231, 69%, 60%);
     color: white;
-    border-radius: 5px;
+    border-radius: 0.313rem ;
     font-weight: 500;
 }
 
@@ -40,4 +41,22 @@
     cursor: pointer;
     background-color: white;
     color: hsl(231, 69%, 60%);
+}
+
+@media screen and (max-width: 60rem) {
+    .extension-cards-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 5vh;
+    }
+
+    
+    .extension-card {
+        width: 80%;
+        margin-top: 0;
+    }
+
+    .install-btn {
+        width: 100%;
+    }
 }

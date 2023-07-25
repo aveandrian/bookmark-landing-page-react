@@ -25,7 +25,7 @@ export default function ExtensionComponent(){
     return (
         <div className='extension-cards-wrapper'>
             {extensionsData.map((extension, i) => (
-                <div key={extension.id} className='extension-card' style={{marginTop: `calc(5vh * ${i})`}}>
+                <div key={extension.id} className='extension-card' style={{'--n': `${i}`}} >
                     <img className='browser-logo' src={extension.logo}/>
                     <h1 className='browser-name'>Add to {extension.name}</h1>
                     <p className='browser-version'>Minimum version {extension.version}</p>
