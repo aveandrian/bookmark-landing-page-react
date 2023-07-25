@@ -77,7 +77,7 @@ h1 {
 
 .get-it-btn.firefox {
   background-color: #F7F7F7;
-  border: 0.125 solid #F7F7F7;
+  border: 0.125rem solid #F7F7F7;
   color: hsl(229, 31%, 21%);
 }
 
@@ -91,7 +91,7 @@ h1 {
 .get-it-btn.firefox:hover {
   cursor: pointer;
   background-color: transparent;
-  border: 0.125 solid hsl(229, 31%, 21%)
+  border: 0.125rem solid hsl(229, 31%, 21%)
 }
 
 
