@@ -426,6 +426,10 @@ footer {
     height: 3.75rem ;
   }
 
+  .error {
+    text-align: start;
+  }
+
   .submit-btn {
     width: 100%;
   }
