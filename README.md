@@ -22,4 +22,4 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![image](https://github.com/aveandrian/bookmark-landing-page-react/assets/13519212/4ca957cf-89ac-4b2f-86ad-99745c15a2e7)
