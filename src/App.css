@@ -236,8 +236,10 @@ h1 {
 }
 
 .email-input.input-error {
-  box-shadow:  0 1.875rem 0 0.313rem hsl(0, 94%, 66%), -0.313rem  -0.313rem  hsl(0, 94%, 66%), 0.313rem -0.313rem   hsl(0, 94%, 66%);
+  box-shadow:  0 1.875rem 0 0.313rem hsl(0, 94%, 66%), -0.313rem -0.313rem hsl(0, 94%, 66%), 0.313rem -0.313rem hsl(0, 94%, 66%);
+  -webkit-box-shadow: 0 1.875rem 0 0.313rem hsl(0, 94%, 66%), -0.313rem -0.313rem hsl(0, 94%, 66%), 0.313rem -0.313rem hsl(0, 94%, 66%);
 }
+
 
 .email-input:focus {
   outline: none;
